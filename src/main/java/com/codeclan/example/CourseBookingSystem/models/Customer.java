@@ -1,10 +1,23 @@
 package com.codeclan.example.CourseBookingSystem.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table (name = "customers")
 public class Customer {
 
+//    Try use the other ID to see what happens
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column (name = "name")
     private String name;
+
+    @Column (name = "town")
     private String town;
+
+    @Column (name = "age")
     private int age;
 
     public Customer(String name, String town, int age) {
