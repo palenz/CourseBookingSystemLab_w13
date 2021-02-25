@@ -1,6 +1,8 @@
 package com.codeclan.example.CourseBookingSystem.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table (name = "customers")
@@ -20,10 +22,15 @@ public class Customer {
     @Column (name = "age")
     private int age;
 
+//    Lets play with this below once we complete MVP
+    @OneToMany (mappedBy = "booking", fetch = FetchType.LAZY)
+    private List<Booking> bookings;
+
     public Customer(String name, String town, int age) {
         this.name = name;
         this.town = town;
         this.age = age;
+        this.bookings = new ArrayList<Booking>();
     }
 
     public Customer() {
