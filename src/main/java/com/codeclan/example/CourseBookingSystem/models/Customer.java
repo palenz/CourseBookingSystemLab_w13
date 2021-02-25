@@ -23,7 +23,10 @@ public class Customer {
     private int age;
 
 //    Lets play with this below once we complete MVP
-    @OneToMany (mappedBy = "booking", fetch = FetchType.LAZY)
+//    Also add cascading
+
+
+    @OneToMany (mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Booking> bookings;
 
     public Customer(String name, String town, int age) {

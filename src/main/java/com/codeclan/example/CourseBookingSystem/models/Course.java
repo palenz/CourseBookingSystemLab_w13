@@ -21,7 +21,8 @@ public class Course {
     @Column (name = "rating")
     private double rating;
 
-    @OneToMany (mappedBy = "booking", fetch = FetchType.LAZY)
+    //add cascading
+    @OneToMany (mappedBy = "course", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Booking> bookings;
 
     public Course(String name, String town, double rating) {

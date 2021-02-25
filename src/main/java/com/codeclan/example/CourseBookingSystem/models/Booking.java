@@ -18,6 +18,7 @@ public class Booking {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
+    //    Also add cascading
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
